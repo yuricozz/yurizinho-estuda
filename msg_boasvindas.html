@@ -8,6 +8,7 @@
     font-weight: normal;
     color: #000000;
     text-align: center;
+    padding: 15px;
 
 
 }
@@ -21,20 +22,33 @@
 </body>
 
 <script>
+    var weekday = new Array(7);
+    weekday[0] = "domingo";
+    weekday[1] = "segunda-feira";
+    weekday[2] = "terça-feira";
+    weekday[3] = "quarta-feira";
+    weekday[4] = "quinta-feira";
+    weekday[5] = "sexta-feira";
+    weekday[6] = "sábado";
 
-    
+   
     var today = new Date();
     var hrs = today.getHours();
+    var d = new Date();
+    var n = d.toLocaleTimeString();
+    var dayOfWeek = weekday[today.getDay()];
+    var date = dayOfWeek+", " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear()  ;
 
     var greet;
 
     if (hrs < 12)
-        greet = 'Bom dia!';
-    else if (hrs >= 12 && hrs <= 18)
-        greet = 'Boa tarde!';
-    else if (hrs >= 18 && hrs <= 24)
-        greet = 'Boa noite!';
+        greet = 'Bom dia, vamos começar?';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Boa tarde, mantenha a calma :)';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Boa noite, não se esqueça de descansar!';
 
-    document.getElementById('lbl').innerHTML = greet;
+    document.getElementById('lbl').innerHTML =
+        greet+=`<div id="date"> Diane, it's ${n}, ${date}.</div><div id="date"> Entering the town of Twin Peaks.`;
 </script> 
 </html>
