@@ -1,4 +1,3 @@
-<a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
 <script>
   var today = new Date();
   var hourNow = today.getHours();
@@ -13,8 +12,5 @@
   else if (hourNow < 24){
     greeting = "Boa noite!";
   }
-
-  document.getElementById("col-1").innerHTML = "<h3>" + greeting + " </h1>";
-
-  document.getElementById("icon").innerHTML = ('<i class="fa fa-' + icon + '" aria-hidden="true"></i>');
+  document.body.innerHTML = greeting + "</h1>"
 </script>
