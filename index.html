@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+  var today = new Date();
+  var hourNow = today.getHours();
+  var greeting;
+
+  if (hourNow < 12){
+    greeting = "Bom dia!";
+  }
+  else if (hourNow < 20){
+    greeting = 'Boa tarde!';
+  }
+  else if (hourNow < 24){
+    greeting = "Boa noite!"
+  }
+
+  document.getElementById("col-1").innerHTML = "<h3>" + greeting + " </h1>";
+
+  document.getElementById("icon").innerHTML = ('<i class="fa fa-' + icon + '" aria-hidden="true"></i>');
+</script>
+</body>
+</html>
