@@ -42,7 +42,7 @@ function updateClock(){
     else if(semin<=59)
         expm = 60 - min;
     
-    if(hrs>17)
+    if(hrs=>17)
         documento.getElementById('lbl').innerHTML = teste='<div id="lbl">Yuri já foi embora! ${emoji3}</div';
     else if(hrs<13)
         documento.getElementById('lbl').innerHTML = teste='<div id="lbl">Yuri ainda não chegou :( ${emoji2}</div';
