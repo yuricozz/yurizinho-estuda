@@ -1,0 +1,54 @@
+<html> 
+<head>
+    <title>Mensagem de boas-vindas</title> 
+    <style>
+#lbl {
+    font-family: serif;
+    font-size: xx-large;
+    font-weight: normal;
+    color: #000000;
+    text-align: center;
+    padding: 15px;
+
+
+}
+    </style>
+</head>
+<body>
+    <div id="lbl"></div>
+</body>
+
+<script>
+function updateClock(){
+
+    var today = new Date();
+    var hrs = today.getHours();
+    var min = today.getMinutes();
+    var semin = min;
+    var exph;
+    var expm;
+    var teste;
+    var emoji1 = String.fromCodePoint(0x1F601);
+    var emoji2 = String.fromCodePoint(0x1F615);
+    var emoji3 = String.fromCodePoint(0x1F973);
+    
+    if(hrs = 16)
+        exph = 0;
+    else if(hrs<17 && hrs != 16)
+        exph = 17 - hrs;
+
+    if(semin = 0)
+        exph = exph + 1;
+    else if(semin<=59)
+        expm = 60 - min;
+    
+    if(hrs>17)
+        documento.getElementById('lbl').innerHTML = teste='<div id="lbl">Yuri já foi embora! ${emoji3}</div';
+    else if(hrs<13)
+        documento.getElementById('lbl').innerHTML = teste='<div id="lbl">Yuri ainda não chegou :( ${emoji2}</div';
+    else
+        document.getElementById('lbl').innerHTML = teste=`<div id="lbl">Faltam ${exph} hora(s) e ${expm} minuto(s) para o Yuri ir embora! ${emoji1}</div>`;
+}
+setInterval(updateClock, 1000);
+</script> 
+</html>
